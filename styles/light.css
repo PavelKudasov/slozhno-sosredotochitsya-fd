@@ -1,12 +1,27 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --color-accent: #FF8DCB;
+  --color-surface-primary: #FFF1F7; 
+  --color-text-accent: #FFC2E6;    
+  --color-text-primary: #353430;   
+  --color-title-accent: #353430;
+  --color-title-primary: #353430;
+  --button-primary-color: #353430;     
+  --button-primary-color-alpha: rgba(53, 52, 48, 0.4); 
+  --image-surface-primary: url(../images/cover-image-light.png);
+  --rec-display: none;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-accent: #FF8DCB;
+    --color-surface-primary: #FFF1F7; 
+    --color-text-accent: #FFC2E6;    
+    --color-text-primary: #353430;   
+    --color-title-accent: #353430;
+    --color-title-primary: #353430;
+    --button-primary-color: #353430;     
+    --button-primary-color-alpha: rgba(53, 52, 48, 0.4);
+    --image-surface-primary: url(../images/cover-image-light.png);
+    --rec-display: none;
+  }
 }

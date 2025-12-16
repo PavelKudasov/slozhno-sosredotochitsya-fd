@@ -1,5 +1,414 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: grid;
+  min-width: 375px;
+  width: 100%;
+  background: var(--color-surface-primary, #000028) center / cover fixed;
+  background-image: var(--image-surface-primary);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--color-text-primary, #F1B2CE);
+  font-family: var(--font-family-base, monospace), monospace;
+  font-weight: var(--font-weight-regular, 400);
+  font-size: var(--font-size-body, 18px);
+}
+
+.header {
+  position: relative;
+  display: grid;
+  height: 100vh;
+  min-height: 668px;
+  grid-template-rows: 1fr min-content 1fr;
+  font-style: normal;
+  color: var(--color-accent, #FF0070);
+  margin-bottom: 40px;
+}
+
+.header__rec {
+  position: absolute;
+  text-transform: uppercase;
+  top: 10px;
+  right: 38px;
+  line-height: 25px;
+  display: var(--rec-display, block)
+}
+
+.header__rec::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  margin: 10px;
+  background: var(--color-accent, #FF0070);
+  box-shadow: 0px 0px 4px 2px var(--color-accent, #FF0070);
+  border-radius: 50%;
+}
+
+.header__theme-menu {
+  display: grid;
+  color: var(--button-primary-color);
+  justify-self: end;
+  align-self: center;
+  margin: 10px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11.5px;
+   list-style: none
+}
+
+.header__theme-menu-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 13px;
+  width: 70px;
+  height: 26px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: inherit;
+  cursor: pointer;
+  text-transform: lowercase;
+  border-bottom: 1px solid transparent;
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-primary-color, #FF0070);
+}
+
+.header__theme-menu-button:hover {
+  text-decoration: none;
+  border: 1px solid var(--button-primary-color-alpha);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--button-primary-color, #FF0070);
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid var(--button-primary-color);
+  border-right: 1px solid var(--button-primary-color);
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid var(--button-primary-color);
+  border-left: 1px solid var(--button-primary-color);
+}
+
+.header__title {
+  display: grid;
+  align-items: end;
+  margin: 0 10px;
+  font-weight: var(--font-weight-bold, 700);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--color-text-accent, #DB00FF);
+  text-shadow: 4px 4px 0 var(--color-accent, #FF0070);
+}
+
+.header__text {
+  display: grid;
+  align-self: center;
+  max-width: 355px; 
+  margin: -10px 10px 0;
+  font-weight: var(--font-weight-bold, 700);
+  line-height: 23.4px;
+  
+}
+
+.card-title--highlight {
+  color: var(--color-title-primary, #000028);
+  background: var(--color-accent, #FF0070);
+} 
+
+.link-decor {
+  text-decoration: none;
+  text-shadow: 2px 2px var(--color-accent);
+}
+
+.link-decor:hover {
+  border-bottom: 1px solid var(--color-title-accent);
+}
+
+.link-decor:focus-visible { 
+  outline: 1px solid var(--color-text-primary, #F1B2CE);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+  margin: 0 10px;
+}
+
+.card-list {
+  display: grid;
+  gap: 20px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  font-weight: var(--font-weight-bold, 700);
+  font-size: var(--font-size-body, 18px);
+  line-height: 23.4px;
+  color: var(--color-title-accent, #FF0070);
+}
+
+.card-title {
+  line-height: 23.4px;
+  font-size: var(--font-size-body, 18px);
+}
+
+.card-text {
+  margin-top: 10px;
+  line-height: 23.4px;
+  font-size: var(--font-size-body, 18px);
+  color: var(--color-text-primary, #F1B2CE);
+}
+
+.card-title--light {
+  font-weight: var(--font-weight-regular, 400);
+}
+
+.gallery-title {
+  margin-bottom: 10px;
+  line-height: 23px;
+  font-size: var(--font-size-body, 18px);
+}
+
+.gallery-grid {
+  display: grid;
+  margin-bottom: 40px;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gallery-image {
+  width: 100%;
+}
+
+.footer {
+  display: grid;
+  min-height: 667px;
+}
+
+.footer__title {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold, 700);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 82.5%;
+  color: var(--color-text-accent, #DB00FF);
+  text-shadow: 2px 2px 0 var(--color-accent);
+}
+
+@media (width >= 768px) {
+  .header {
+    min-height: 1024px;
+    margin-bottom: 60px;
+  }
+
+  .header__title {
+    margin: -15px 0;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .header__text {
+    justify-self: end;
+    max-width: 364px; 
+    margin: 20px 20px 25px;
+  }
+
+  .header__rec {
+    top: 20px;
+    right: 48px;
+  }
+
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .header__theme-menu {
+    margin: 20px;
+  }
+
+  .main {
+    gap: 80px;
+    margin: 0 20px;
+  }
+  
+  .section-title {
+    margin-bottom: 0;
+  }
+
+  .card-text {
+    margin-top: 10px; 
+  }
+
+  .card-list {
+    grid-column: auto;
+  }
+
+  .content-section--split {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 20px;
+  }
+
+  .content-section--split > .section-title {
+    grid-column: 1;
+  }
+
+  .content-section--split > .card-list {
+    grid-column: 2;
+  }
+
+  .content-section--single {
+    display: grid;
+    grid-template-columns: 1fr 3fr; 
+    gap: 20px;
+  }
+
+  .content-section--single > .section-title {
+    grid-column: 1;
+  }
+
+  .content-section--single > .card-title {
+    grid-column: span 2;
+  }  
+
+  .content-section--single > .card-list {
+    grid-column: span 2;
+  }  
+
+  .gallery-title {
+    margin-bottom: 20px;
+  } 
+  
+  .gallery-grid {
+    display: grid;
+    max-height: 100vw;
+    grid-template-areas:
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 1fr);
+    margin-bottom: 70px;
+    gap: 20px;
+  }
+
+  .gallery-grid li:nth-child(1) { 
+    grid-area: sunset;
+    grid-column: 1/3;
+    grid-row: 1;
+  }
+
+  .gallery-grid li:nth-child(2) { 
+    grid-area: ice-cream;
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+
+  .gallery-grid li:nth-child(3) { 
+    grid-area: tape;
+    grid-column: 1;
+    grid-row: 2/4;
+  }
+
+  .gallery-grid li:nth-child(4) { 
+    grid-area: books;
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .gallery-grid li:nth-child(5) { 
+    grid-area: street;
+    grid-column: 2/4;
+    grid-row: 3;
+  }
+
+  .gallery-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  
+  .footer {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    min-height: 1024px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header {
+    min-height: 768px;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__text {
+    max-width: 491px;
+  }
+
+  .section-title {
+    min-width: 315px;
+  }
+  
+  .content-section--single > .card-list{
+    grid-column: 1 / -1;
+  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content-section--split > .card-list {
+    margin-left: -5px;
+    min-width: 650px;
+  }
+
+  .footer {
+    min-height: 768px;
+  }
 }
