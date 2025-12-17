@@ -1,7 +1,7 @@
 .page {
   display: grid;
   inline-size: 100%;
-  background: var(--color-surface-primary, #000028) center / cover fixed;
+  background: var(--color-surface-primary, #000028);
   background-image: var(--image-surface-primary);
   background-position: center;
   background-size: cover;
@@ -207,7 +207,7 @@
 
 .footer {
   display: grid;
-  min-height: 667px;
+  min-height: 100vh;
 }
 
 .footer__title {
@@ -275,7 +275,6 @@
   }
 
   .content-section--split {
-    display: grid;
     grid-template-columns: 1fr 2fr; 
     gap: 20px;
   }
