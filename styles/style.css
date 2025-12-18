@@ -207,7 +207,8 @@
 
 .footer {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
+  min-height:668px;
 }
 
 .footer__title {
@@ -274,9 +275,13 @@
     grid-column: auto;
   }
 
+  .content-section{
+    display:grid;
+    gap:20px;
+  }
+
   .content-section--split {
     grid-template-columns: 1fr 2fr; 
-    gap: 20px;
   }
 
   .content-section--split > .section-title {
@@ -288,9 +293,7 @@
   }
 
   .content-section--single {
-    display: grid;
     grid-template-columns: 1fr 3fr; 
-    gap: 20px;
   }
 
   .content-section--single > .section-title {
