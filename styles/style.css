@@ -320,7 +320,7 @@
       "tape books ice-cream"
       "tape street street";
     grid-template-columns: repeat(3, 1fr); 
-    grid-template-rows: repeat(3, 1fr);
+    
     margin-bottom: 70px;
     gap: 20px;
   }
